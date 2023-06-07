@@ -7,4 +7,5 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v1
       - name: Branch name
-        run: echo running on branch ${GITHUB_REF##*/}
+        run: pull_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+        run: echo "pull number = $pull_number"
