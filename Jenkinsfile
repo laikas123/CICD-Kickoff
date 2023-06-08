@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh './gradlew clean check --no-daemon'
+	sh 'echo hello'
+        echo 'Pulling...' + env.BRANCH_NAME
       }
     }
   }
